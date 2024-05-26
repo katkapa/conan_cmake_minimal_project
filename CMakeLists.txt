@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.10)
+set(CMAKE_CXX_STANDARD 20)
+project(conan_cmake_minimal_project)
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+conan_basic_setup()
+find_package(jsoncpp REQUIRED)
+add_executable( ${PROJECT_NAME} zdravomir.cpp )
+target_link_libraries(${PROJECT_NAME} JsonCpp::JsonCpp)
